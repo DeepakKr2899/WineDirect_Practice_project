@@ -477,6 +477,22 @@ steps:
             sourceColumnReferences:
               - columnReferences: []
                 transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 94982cd3-01cf-4b75-b493-3e69e55cf48a
+              stepCounter: 8bd345f1-d469-49b0-984b-7837f5d1a104
+            dataType: VARCHAR(256)
+            description: ""
+            name: WATCHED_STATUS
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: a5461cfd-2b86-43dd-9865-5e51dddf5754
+                    stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
