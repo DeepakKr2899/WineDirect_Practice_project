@@ -493,6 +493,34 @@ steps:
                   - columnCounter: a5461cfd-2b86-43dd-9865-5e51dddf5754
                     stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
                 transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 0e1eedc7-dc49-4e54-82b2-f44b52cdca46
+              stepCounter: 8bd345f1-d469-49b0-984b-7837f5d1a104
+            dataType: VARCHAR(256)
+            description: ""
+            name: WILL_WATCH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: b4119449-9a52-49b5-85fc-7ea22020136a
+                    stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+                transform: ""
+          - columnReference:
+              columnCounter: 1fc4d86a-8f29-43e1-b003-ec9f48e2fc62
+              stepCounter: 8bd345f1-d469-49b0-984b-7837f5d1a104
+            dataType: VARCHAR(4)
+            description: ""
+            name: NEW_COL
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: e998e877-11d4-4340-901b-e14103f5582f
+                    stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:

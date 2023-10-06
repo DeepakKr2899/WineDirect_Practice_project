@@ -384,6 +384,36 @@ steps:
             nullable: true
             primaryKey: false
             uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: e998e877-11d4-4340-901b-e14103f5582f
+              stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+            config: {}
+            dataType: VARCHAR(4)
+            defaultValue: ""
+            description: ""
+            name: NEW_COL
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: b4119449-9a52-49b5-85fc-7ea22020136a
+              stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+            config: {}
+            dataType: VARCHAR(256)
+            defaultValue: ""
+            description: ""
+            name: WILL_WATCH
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
         join:
           joinCondition: FROM {{ ref('SOURCE_S3', 'HORROR_MOVIES') }}
       name: HORROR_MOVIES
