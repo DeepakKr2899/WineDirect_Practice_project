@@ -513,7 +513,7 @@ steps:
           - columnReference:
               columnCounter: f04384e4-1d2a-4147-88b0-05e2891c579d
               stepCounter: 01bd465e-a361-4203-b1b8-6b905f9382fe
-            dataType: VARCHAR(4)
+            dataType: VARCHAR(5)
             description: ""
             name: NEW_COL
             nullable: true
