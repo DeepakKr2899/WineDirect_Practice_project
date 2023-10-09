@@ -389,6 +389,21 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
+              columnCounter: e998e877-11d4-4340-901b-e14103f5582f
+              stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+            config: {}
+            dataType: VARCHAR(5)
+            defaultValue: ""
+            description: ""
+            name: NEW_COL
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
               columnCounter: b4119449-9a52-49b5-85fc-7ea22020136a
               stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
             config: {}
@@ -404,13 +419,13 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: e998e877-11d4-4340-901b-e14103f5582f
+              columnCounter: 3bfdbaad-4454-4cc7-9155-203b8cc7bbcf
               stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
             config: {}
-            dataType: VARCHAR(5)
+            dataType: VARCHAR(3)
             defaultValue: ""
             description: ""
-            name: NEW_COL
+            name: NEWLY_COL_ADDED
             nullable: true
             primaryKey: false
             uniqueKey: false

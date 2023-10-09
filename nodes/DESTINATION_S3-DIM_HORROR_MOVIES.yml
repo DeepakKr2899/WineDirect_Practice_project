@@ -47,6 +47,20 @@ steps:
                     stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
                 transform: ""
           - columnReference:
+              columnCounter: c9a99108-281b-400a-8583-72fa03e5e894
+              stepCounter: 01bd465e-a361-4203-b1b8-6b905f9382fe
+            dataType: VARCHAR(256)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: TAGLINE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 291c5ddc-e6b4-4b95-8d82-e3160564746c
+                    stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+                transform: ""
+          - columnReference:
               columnCounter: e17a772c-5892-4e0a-880d-79054983dd57
               stepCounter: 01bd465e-a361-4203-b1b8-6b905f9382fe
             dataType: NUMBER(38,0)
@@ -143,20 +157,6 @@ steps:
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: e289f0fa-60e4-4fd5-bbda-bb3076d174bc
-                    stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
-                transform: ""
-          - columnReference:
-              columnCounter: c9a99108-281b-400a-8583-72fa03e5e894
-              stepCounter: 01bd465e-a361-4203-b1b8-6b905f9382fe
-            dataType: VARCHAR(256)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: TAGLINE
-            nullable: true
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 291c5ddc-e6b4-4b95-8d82-e3160564746c
                     stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
                 transform: ""
           - columnReference:
@@ -520,6 +520,22 @@ steps:
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: e998e877-11d4-4340-901b-e14103f5582f
+                    stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: e9723887-77eb-41eb-bf87-3c879bd53888
+              stepCounter: 01bd465e-a361-4203-b1b8-6b905f9382fe
+            dataType: VARCHAR(3)
+            description: ""
+            name: NEWLY_COL_ADDED
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3bfdbaad-4454-4cc7-9155-203b8cc7bbcf
                     stepCounter: a077ab93-b27c-4819-ac49-bc55d49857dd
                 transform: ""
         cteString: ""
