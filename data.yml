@@ -1,6 +1,13 @@
 defaultStorageMapping: SOURCE_S3
 installedPackages: {}
-jobs: {}
+jobs:
+  Job-2:
+    excludeSelector: "{name:DIM_HORROR_MOVIES}"
+    id: 2
+    includeSelector: "{HORROR_MOVIES}+"
+    name: Sample Job
+    steps: []
+    subgraphs: []
 locations:
   DESTINATION_POSTGRES:
     mappingDefinitions:
@@ -1484,5 +1491,15 @@ stepTypes:
             {% endif %}
     name: Persistent Stage
     version: 1
-subgraphs: {}
+subgraphs:
+  Subgraph-3:
+    id: "3"
+    name: Horror_movie Subgraph
+    steps:
+      - ef711418-defc-4f77-bef8-d97de260ecc8
+  Subgraph-4:
+    id: "4"
+    name: Healthcare_stroke Subgraph
+    steps:
+      - 546dff0e-e0cf-4601-8f4b-5093fba8dce2
 version: 2
