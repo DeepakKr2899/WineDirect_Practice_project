@@ -8,10 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-    - name: Get current date
-      id: todays-date
-      run: echo "TODAYS_DATE=$(date +'%Y%m%d')" >> "$GITHUB_OUTPUT"
-    - name: Fivetran update the pattern of Paycom Labor Report
+
+    - name: weekly sync the partial data
       run: |
         import requests
         import json
