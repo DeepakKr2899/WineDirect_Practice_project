@@ -1,7 +1,7 @@
 name: "Sync partial weekly data"
 on:
   schedule:
-  - cron: "55 16 * * 0"
+  - cron: "55 17 * * 2"
   workflow_dispatch:
 jobs:
   run-updater:
@@ -9,37 +9,34 @@ jobs:
     timeout-minutes: 5
     steps:
 
-    - name: weekly sync the partial data
+    - name: get today date
+      id: get_date
+      run: echo "todays_date=$(date +'%d%m%Y')" >> "$GITHUB_OUTPUT"
+    
+    - name: modify the pattern of connector
       run: |
-        import requests
-        import json
-        from datetime import datetime
-
-        url = "https://api.fivetran.com/v1/connectors/raining_connection"
-
-        current_date=datetime.today()
-        formatted_date = current_date.strftime('%d%m%Y')
-        pat="Sales"+formatted_date
-
-
-        payload = json.dumps({
-          "paused": "false",
-          "pause_after_trial": "false",
-          "sync_frequency": "360",
-          "data_delay_threshold": "0",
-          "data_delay_sensitivity": "NORMAL",
-          "schedule_type": "manual",
-          "is_historical_sync": "false",
-          "config": {
-          "pattern": pat
-        }
-        })
-        headers = {
-          'Content-Type': 'application/json',
-          'Authorization': 'Basic cEZQWnp1Z3dPWXJVM0FlbToxcmxpT0cwMnNMRTJEVmFoVDVjOGNraEVhdzFlcWY4RA==',
-          'Cookie': 'INGRESSCOOKIE=dd37844c17c95cfbdcffe420bc4920e6|bac6da9b4d464a443a3af1340233b03f'
-        }
-
-        response = requests.request("PATCH", url, headers=headers, data=payload)
-
-        print(response.text)
+        curl --location --request PATCH 'https://api.fivetran.com/v1/connectors/raining_connection' \
+        --header 'Content-Type: application/json' \
+        --header 'Authorization: Basic cEZQWnp1Z3dPWXJVM0FlbToxcmxpT0cwMnNMRTJEVmFoVDVjOGNraEVhdzFlcWY4RA==' \
+        --header 'Cookie: INGRESSCOOKIE=dd37844c17c95cfbdcffe420bc4920e6|bac6da9b4d464a443a3af1340233b03f' \
+        --data '{
+            "paused": "false",
+            "pause_after_trial": "false",
+            "sync_frequency": "360",
+            "data_delay_threshold": "0",
+            "data_delay_sensitivity": "NORMAL",
+            "schedule_type": "manual",    
+            "is_historical_sync": "false",
+            "config": {
+                "pattern": "Sales${{steps.get_date.outputs.todays_date}}"
+            }    
+        }'
+    - name: weekly sync partial data
+      run: |
+        curl --location 'https://api.fivetran.com/v1/connectors/raining_connection/sync' \
+        --header 'Content-Type: application/json' \
+        --header 'Authorization: Basic cEZQWnp1Z3dPWXJVM0FlbToxcmxpT0cwMnNMRTJEVmFoVDVjOGNraEVhdzFlcWY4RA==' \
+        --header 'Cookie: INGRESSCOOKIE=f6b0a7e671451d99a9dcb51d257ba957|bac6da9b4d464a443a3af1340233b03f' \
+        --data '{
+            "force": false
+        }'
